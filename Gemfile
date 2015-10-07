@@ -25,6 +25,8 @@ gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "title"
 gem "uglifier"
+gem "sunlight"
+gem "figaro"
 
 group :development do
   gem "spring"
