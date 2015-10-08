@@ -31,6 +31,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'puma'
 gem 'sunlight'
 gem 'httparty'
+gem 'figaro'
+gem "rails_12factor"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -41,6 +43,7 @@ group :development, :test do
   gem 'capybara-rails'
   gem 'launchy'
   gem "database_cleaner"
+  gem 'pry'
 end
 
 group :development do

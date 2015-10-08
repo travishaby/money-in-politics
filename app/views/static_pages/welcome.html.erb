@@ -1,2 +1,16 @@
-<h1>StaticPages#welcome</h1>
-<p>Find me in app/views/static_pages/welcome.html.erb</p>
+<h1>Welcome to The Iron Triangle</h1>
+
+<div class="row">
+  <div class="container" id="colorado-senators">
+    <% @state_senator_info.each do |senator| %>
+      <div class="row">
+        <%= senator["legislators"][0]["full_name"] %>: <%= senator["legislators"][0]["leg_id"] %>
+      </div>
+    <% end %>
+    <% @senator_spondered_bills.each do |bill| %>
+      <div class="row">
+        <%= bill["title"] %>: <%= bill["bill_id"] %>
+      </div>
+    <% end %>
+  </div>
+</div>
