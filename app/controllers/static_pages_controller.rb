@@ -1,8 +1,7 @@
 class StaticPagesController < ApplicationController
-  
+
   def welcome
     @state_senator_info = SenatorInfo.state_senator_data("co")
-    @senator_spondered_bills = SenatorSponderedBills.senator_bill_info("COL000034")
   end
 
   helper_method :senator_bills_2015
