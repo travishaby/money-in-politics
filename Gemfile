@@ -29,7 +29,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'puma'
-
+gem 'sunlight'
+gem 'httparty'
+gem 'figaro'
+gem "rails_12factor"
+gem "bootstrap-sass"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -40,6 +44,7 @@ group :development, :test do
   gem 'capybara-rails'
   gem 'launchy'
   gem "database_cleaner"
+  gem 'pry'
 end
 
 group :development do

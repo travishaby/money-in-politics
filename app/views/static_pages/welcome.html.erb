@@ -1,2 +1,18 @@
-<h1>StaticPages#welcome</h1>
-<p>Find me in app/views/static_pages/welcome.html.erb</p>
+<h1>Colorado State Senators and Their Bills</h1>
+
+<div class="row">
+  <div class="container" id="colorado-senators">
+    <% @state_senator_info.each do |senator| %>
+      <div class="row">
+        <h2><%= senator["legislators"][0]["full_name"] %></h2>
+          <div class="container">
+            <% senator_bills_2015(senator["legislators"][0]["leg_id"]).each do |bill| %>
+              <div class="col-md-3">
+                <%= bill["title"] %>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
