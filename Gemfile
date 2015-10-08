@@ -33,6 +33,7 @@ gem 'sunlight'
 gem 'httparty'
 gem 'figaro'
 gem "rails_12factor"
+gem "bootstrap-sass"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

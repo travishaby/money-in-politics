@@ -1,15 +1,17 @@
-<h1>Welcome to The Iron Triangle</h1>
+<h1>Colorado State Senators and Their Bills</h1>
 
 <div class="row">
   <div class="container" id="colorado-senators">
     <% @state_senator_info.each do |senator| %>
       <div class="row">
-        <%= senator["legislators"][0]["full_name"] %>: <%= senator["legislators"][0]["leg_id"] %>
-      </div>
-    <% end %>
-    <% @senator_spondered_bills.each do |bill| %>
-      <div class="row">
-        <%= bill["title"] %>: <%= bill["bill_id"] %>
+        <h2><%= senator["legislators"][0]["full_name"] %></h2>
+          <div class="container">
+            <% senator_bills_2015(senator["legislators"][0]["leg_id"]).each do |bill| %>
+              <div class="col-md-3">
+                <%= bill["title"] %>
+              </div>
+            <% end %>
+          </div>
       </div>
     <% end %>
   </div>

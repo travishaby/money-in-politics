@@ -7,9 +7,9 @@ class StaticPagesController < ApplicationController
     @senator_spondered_bills = SenatorSponderedBills.senator_bill_info("COL000034")
   end
 
-  helper_method :sentaor_bills
-  def senator_bills(senator_id, session)
-
+  helper_method :senator_bills_2015
+  def senator_bills_2015(senator_id)
+    SenatorSponderedBills.senator_bill_info(senator_id)
   end
 
 end
@@ -28,7 +28,15 @@ class SenatorSponderedBills
   include HTTParty
   base_uri "openstates.org/api/v1/bills"
   def self.senator_bill_info(senator_id)
-    self.get("/?state=co&chamber=upper&sponsor_id=#{senator_id}&apikey=925b4872b5324ab3a54508782989b893")
+    self.get("/?state=co&chamber=upper&sponsor_id=#{senator_id}&search_window=session%3A2015A&apikey=925b4872b5324ab3a54508782989b893")
   end
-
 end
+
+
+# <% @senator_spondered_bills.each do |bill| %>
+#   <div class="row">
+#     <div class="div-col-3">
+#       <%= bill["title"] %>: <%= bill["bill_id"] %>
+#     </div>
+#   </div>
+# <% end %>
